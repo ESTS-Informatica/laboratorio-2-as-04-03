@@ -73,7 +73,18 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerClient(User client) {
-        return true;         // dummy implementation
+        if(client == null) {
+            return false;
+        }
+        
+        for(User c:getClients()) {
+            if(c.getEmail().equals(client.getEmail()) && c.getId().equals(client.getId()) && c.getName().equals(client.getName()) && c.getPhone().equals(client.getPhone())) {
+                return false;
+            }
+        }
+        
+        clients.add(client);
+        return true;
     }
 
     /**
@@ -83,7 +94,18 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerSeller(User seller) {
-        return true;         // dummy implementation
+        if(seller == null) {
+            return false;
+        }
+        
+        for(User c:getSellers()) {
+            if(c.getEmail().equals(seller.getEmail()) && c.getId().equals(seller.getId()) && c.getName().equals(seller.getName()) && c.getPhone().equals(seller.getPhone())) {
+                return false;
+            }
+        }
+        
+        sellers.add(seller);
+        return true;
     }
 
     /**
@@ -93,7 +115,18 @@ public class Company {
      * @return true If the registration succeeds, false otherwise.
      */
     public boolean registerProperty(Property property) {
-        return true;         // dummy implementation
+        if(property == null) {
+            return false;
+        }
+        
+        for(Property c:getProperties()) {
+            if(c.getId().equals(property.getId()) && c.getDescription().equals(property.getDescription()) && c.getPrice() == (property.getPrice())) {
+                return false;
+            }
+        }
+        
+        properties.add(property);
+        return true;
     }
 
     /**

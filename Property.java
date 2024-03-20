@@ -20,9 +20,10 @@ public class Property {
      * @param price The property price.
      */
     public Property(String description, double price) {
-        id = null;
+        id = NUMBER_OF_PROPERTIES+"";
         setDescription(description);
         setPrice(price);
+        NUMBER_OF_PROPERTIES++;
     }
 
     /**
