@@ -38,6 +38,12 @@ public class PropertyTest
         assertEquals(150000.0, property1.getPrice());
     }
     
+    @Test
+    public void testToString() {
+        Property property1 = new Property("T3 Monte Belo", 150000.0);
+        assertEquals("Descricao: T3 Monte Belo\nPreco: 150000,0", property1.toString());
+    }
+    
     /**
      * Desfaz a 'fixture' do teste.
      *

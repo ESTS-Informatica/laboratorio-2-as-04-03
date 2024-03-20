@@ -66,6 +66,6 @@ public class Property {
 
     @Override
     public String toString() {
-        return null;
+        return String.format("Descricao: %s\nPreco: %.1f", getDescription(), getPrice());
     }
 }
